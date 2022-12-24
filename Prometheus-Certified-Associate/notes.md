@@ -1,0 +1,1 @@
+## Notes to prepare for Prometheus Certified Associate Certification
