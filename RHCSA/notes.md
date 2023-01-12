@@ -107,3 +107,5 @@ Configure a container to start automatically as a systemd service
 Attach persistent storage to a container
 As with all Red Hat performance-based exams, configurations must persist after reboot without intervention.
 ```
+
+## RHCSA Notes
