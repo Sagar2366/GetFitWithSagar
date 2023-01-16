@@ -5,3 +5,4 @@ Open Source
 # Prepare for below certifications 
 1. Prometheus Certified Associate PCA
 2. Kubernetes and Cloud Native Associate KCNA
+3. Redhat Cerified System Administrator RHCSA
