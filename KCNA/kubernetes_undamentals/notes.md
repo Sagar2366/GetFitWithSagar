@@ -1,4 +1,4 @@
-## Kubernetes Fundamentals
+## Kubernetes Fundamentals 
 
 ReplicaSet
 A controller object that ensures a desired number of pods is running at any given time. ReplicaSets can be used to scale out applications and improve their availability. They do this by starting multiple copies of a pod definition.
@@ -33,3 +33,7 @@ Of course, there is no point in starting more and more Replicas of Pods, if the 
 
 Vertical Pod Autoscaler
 The Vertical Pod Autoscaler is relatively new and allows Pods to increase the resource requests and limits dynamically. As we discussed earlier, vertical scaling is limited by the node capacity.
+
+
+## Kubernetes Commands
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
