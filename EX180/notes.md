@@ -1,9 +1,9 @@
-##Red Hat EX180 Practice Questions
+## Red Hat EX180 Practice Questions
 
-##Introduction
+## Introduction
 The Red Hat Certified Specialist in Containers and Kubernetes exam (EX180) tests your skills and knowledge of the fundamentals of containers and OpenShift, including the ability to find, customize, run, and manage containerized services in both standalone environments and environments with both Kubernetes and OpenShift. Now that you've gone through all the objectives, it is time to test your newfound knowledge on the practice exam to prepare for the real exam! In this lab, you will be asked to perform a series of tasks similar to what you will be asked to do in the actual exam. Good luck, and please use this practice exam as many times as you need before taking the exam.
 
-##Task 1.
+## Task 1.
 ```
 Edit the registries:
 sudo vi /etc/containers/registries.conf
@@ -13,7 +13,7 @@ Find the registries.insecure parameter line and add 'registry-1:5000' as an inse
 Save and quit the file by pressing Escape followed by :wq.
 ```
 
-##Task 2.
+## Task 2.
 ```
 Pull the latest Nginx image docker.io/library/nginx:
 podman pull docker.io/library/nginx
@@ -33,7 +33,7 @@ Review the contents of web-vol.log copy:
 less web-vol.log
 ```
 
-##Task 3.
+## Task 3.
 ```
 Pull the latest MySQL image from docker.io/library/mysql (this may take a few minutes):
 podman pull docker.io/library/mysql
@@ -53,7 +53,7 @@ Verify the log file was copied successfully:
 ls -l mysql_logs/
 ```
 
-##Task 4.
+## Task 4.
 ```
 Log in to the registry:
 podman login -u cloud_user registry-1:5000
@@ -86,7 +86,7 @@ podman images
 Build and Run Custom Images
 ```
 
-##Task 5.
+## Task 5.
 ```
 View the images:
 podman images
@@ -105,7 +105,7 @@ List guru-web.tar:
 ls guru-web.tar
 ```
 
-##Task 6.
+## Task 6.
 ```
 List the docker directory:
 ls docker
@@ -149,7 +149,7 @@ CMD ["-g", "daemon off;"]
 Save and quit the file by pressing Escape followed by :wq.
 ```
 
-##Task 7.
+## Task 7.
 ```
 Build the image (this may take a few minutes):
 podman build -t llama-cart:v1 .
@@ -170,7 +170,7 @@ Copy the public DNS name, paste it into a new browser, and add :8090 to the end 
 Creating Applications with OpenShift
 ```
 
-##Task 8: CodeReady Containers
+## Task 8: CodeReady Containers
 ```
 Create new project named guru-php with display name of Test hello guru project:
 oc new-project guru-php --display-name="Test hello guru project"
@@ -190,7 +190,7 @@ Test the route:
 curl <ROUTE_HOSTNAME>
 ```
 
-##Task 9: OpenShift Sandbox
+## Task 9: OpenShift Sandbox
 ```
 Once you're logged in to the OpenShift sandbox, make sure you're using the existing <username>-dev project.
 Click the shell icon (>_) in the top-right.
@@ -212,7 +212,7 @@ Test the route:
 curl <ROUTE_HOSTNAME>
 ```
 
-##Task 10: CodeReady Containers
+## Task 10: CodeReady Containers
 ```
 Create new project named inventory:
 oc new-project inventory
@@ -242,7 +242,7 @@ Scroll down to the route section, copy the route hostname, and paste it into a n
 Switch to the CodeReady Containers web UI interface and, under Topology, click on the Open URL icon.
 ```
 
-##Task 11: OpenShift Sandbox
+## Task 11: OpenShift Sandbox
 ```
 Switch to the <username>-stage project:
 oc project <username>-stage
@@ -274,7 +274,7 @@ oc get routes
 Navigate back to the Topology, move into the <username>-stage project, and click on the Open URL icon.
 ```
 
-##Task 12: CodeReady Containers
+## Task 12: CodeReady Containers
 ```
 Confirm you're logged in to the inventory project:
 oc project
@@ -297,7 +297,7 @@ Check the directories:
 ls logs/*
 ```
 
-##Task 13: OpenShift Sandbox
+## Task 13: OpenShift Sandbox
 ```
 Confirm you're in the <username>-stage project:
 oc project
