@@ -190,7 +190,7 @@ Test the route:
 curl <ROUTE_HOSTNAME>
 ```
 
-##Task 9: CodeReady Containers
+## Task 9: CodeReady Containers
 ```
 Create new project named inventory:
 oc new-project inventory
@@ -220,7 +220,7 @@ Scroll down to the route section, copy the route hostname, and paste it into a n
 Switch to the CodeReady Containers web UI interface and, under Topology, click on the Open URL icon.
 ```
 
-##Task 10: CodeReady Containers
+## Task 10: CodeReady Containers
 ```
 Confirm you're logged in to the inventory project:
 oc project
