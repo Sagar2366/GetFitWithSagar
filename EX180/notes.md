@@ -190,29 +190,7 @@ Test the route:
 curl <ROUTE_HOSTNAME>
 ```
 
-##Task 9: OpenShift Sandbox
-```
-Once you're logged in to the OpenShift sandbox, make sure you're using the existing <username>-dev project.
-Click the shell icon (>_) in the top-right.
-Once the shell loads, click on the Open terminal in a new tab icon.
-Create the new PHP app with the specified configuration and this GitHub repo (this may take a few minutes):
-oc new-app --name=hello-guru --as-deployment-config php~https://github.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes --context-dir=php-hello-world -l app=hello-guru
-clear your screen.
-Check the resources and wait until the pod build is ready (this may take a few minutes):
-oc get all
-Check the resources:
-oc get all
-Confirm the hello-guru pod is running.
-clear your screen.
-Expose the hello-guru service:
-oc expose service hello-guru
-Retrieve the routes:
-oc get routes
-Test the route:
-curl <ROUTE_HOSTNAME>
-```
-
-##Task 10: CodeReady Containers
+##Task 9: CodeReady Containers
 ```
 Create new project named inventory:
 oc new-project inventory
@@ -242,39 +220,7 @@ Scroll down to the route section, copy the route hostname, and paste it into a n
 Switch to the CodeReady Containers web UI interface and, under Topology, click on the Open URL icon.
 ```
 
-##Task 11: OpenShift Sandbox
-```
-Switch to the <username>-stage project:
-oc project <username>-stage
-Download the template file:
-curl https://raw.githubusercontent.com/linuxacademy/Red-Hat-Certified-Specialist-in-Containers-and-Kubernetes/main/multi-container/multi_test.yaml -o multi_test.yaml
-Verify the file was created:
-ls multi_test.yaml
-clear your screen.
-Publish the template to the current project:
-oc create -f multi_test.yaml
-Verify the template has been created:
-oc get templates
-clear your screen.
-Process the template and save to a file named processed_template.yaml:
-oc process -f multi_test.yaml -p NAME=fruit-stand -p DATABASE_NAME=fruit_stand -p DATABASE_USER=guru -p DATABASE_PASSWORD=badpass -p DATABASE_ADMIN_PASSWORD=badidea -l app=guru-fruit > processed_template.yaml
-Verify the file exists:
-ls processed_template.yaml
-clear your screen.
-Create the application:
-oc create -f processed_template.yaml
-clear your screen.
-Retrieve your resources (it may take a few minutes until the build is complete):
-oc get all | less
-Retrieve the resources to confirm pod/fruit-stand and pod/postgresql are running:
-oc get all
-clear your screen.
-Retrieve the routes:
-oc get routes
-Navigate back to the Topology, move into the <username>-stage project, and click on the Open URL icon.
-```
-
-##Task 12: CodeReady Containers
+##Task 10: CodeReady Containers
 ```
 Confirm you're logged in to the inventory project:
 oc project
@@ -296,27 +242,3 @@ clear the screen.
 Check the directories:
 ls logs/*
 ```
-
-##Task 13: OpenShift Sandbox
-```
-Confirm you're in the <username>-stage project:
-oc project
-Build the required directories:
-mkdir -p logs/pod-fruit-stand logs/pod-postgres
-List the logs:
-ls logs
-Retrieve the pods:
-oc get pods
-Sync /var/log from the running fruit-stand pod to the respective directory. Note: It will show an rsync error in OpenShift sandbox if rsync is not installed. The command will still work by falling back to tar:
-oc rsync <FRUIT_STAND_POD>:/var/log/ logs/pod-fruit-stand/
-Retrieve the logs:
-ls logs/pod-fruit-stand/
-clear your screen.
-Retrieve the pods:
-oc get pods
-Sync /var/log from the running postgresql pod to the respective directory:
-oc rsync <POSTGRESQL_POD>:/var/log/ logs/pod-postgres/
-Retrieve the logs:
-ls logs/pod-postgres/
-```
-
