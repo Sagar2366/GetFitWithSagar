@@ -109,3 +109,13 @@ As with all Red Hat performance-based exams, configurations must persist after r
 ```
 
 ## RHCSA Notes
+
+## PRACTICE QUESTIONS
+https://www.youtube.com/watch?v=K-_wfLZeIzg
+https://www.youtube.com/watch?v=-1z5-ZKSNj4&list=PLZ0gjp0MHyEuUpWla5g0ZK5JinrC2cjoT&index=27
+https://www.youtube.com/watch?v=YqUPrxQNjBc
+https://github.com/SHrEE-7/RHCSA_RHEL-8_With-Practice-Questions/tree/main/Practice_Exam-Questions
+https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions
+https://www.youtube.com/watch?v=TejHLx1qA9E
+https://www.youtube.com/watch?v=obumIwEKTmA&list=PLlr7wO747mNrUoTuXhZ0REJw3hL4oWvLm&index=9
+
