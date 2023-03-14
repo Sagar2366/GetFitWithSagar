@@ -118,4 +118,11 @@ https://github.com/SHrEE-7/RHCSA_RHEL-8_With-Practice-Questions/tree/main/Practi
 https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions
 https://www.youtube.com/watch?v=TejHLx1qA9E
 https://www.youtube.com/watch?v=obumIwEKTmA&list=PLlr7wO747mNrUoTuXhZ0REJw3hL4oWvLm&index=9
+https://www.youtube.com/watch?v=esbhLEM4zYc
+https://www.youtube.com/playlist?list=PLlr7wO747mNrUoTuXhZ0REJw3hL4oWvLm
+https://www.youtube.com/watch?v=mkW2UefXEvI
+https://www.youtube.com/watch?v=8MBGWmApgYg&list=PLZ0gjp0MHyEuUpWla5g0ZK5JinrC2cjoT&index=28
+
+
+NETWORK CONFIGURATIONS - https://www.youtube.com/watch?v=K-_wfLZeIzg
 
