@@ -11,6 +11,7 @@ Open Source
 6. CKAD
 7. CKS
 8. Terraform Certified Associate
+9. Redhat System Administration - Linux Automation with Ansible 
 
 
 CKA Exams tips - https://www.youtube.com/watch?v=RoSacSrr2oQ
