@@ -13,6 +13,9 @@ Open Source
 8. Terraform Certified Associate
 9. Redhat System Administration - Linux Automation with Ansible 
 
+Cheat sheets -
+Docker
+Kubernetes
 
 CKA Exams tips - https://www.youtube.com/watch?v=RoSacSrr2oQ
 
