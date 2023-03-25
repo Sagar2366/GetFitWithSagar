@@ -15,6 +15,7 @@ Open Source
 
 Cheat sheets -
 Docker https://docs.docker.com/get-started/docker_cheatsheet.pdf
+
 Kubernetes https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 CKA Exams tips - https://www.youtube.com/watch?v=RoSacSrr2oQ
