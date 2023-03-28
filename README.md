@@ -12,6 +12,7 @@ Open Source
 7. CKS
 8. Terraform Certified Associate
 9. Redhat System Administration - Linux Automation with Ansible 
+10. RHCE
 
 Cheat sheets -
 Docker https://docs.docker.com/get-started/docker_cheatsheet.pdf
