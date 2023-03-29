@@ -1,0 +1,262 @@
+Description
+The Red Hat Certified Engineer, or EX 294, exam is one of the most highly regarded exams in the Linux world. The skills you learn while preparing for the exam will not only prepare you to pass the exam itself, but also to perform real-world activities in a real production environment. Instead of a multiple-choice test, the exam takes place in a real environment. This makes the RHCE an extremely desirable certification. This hands-on lab will walk you through similar scenarios to those you may find on the exam and will provide insight to the preparations you need to make to pass the exam. This practice exam should not necessarily be used as a study guide, but as a readiness indicator.
+
+This course is not approved or sponsored by Red Hat.
+
+Objectives
+Successfully complete this lab by achieving the following learning objectives:
+
+Set up /etc/ansible/hosts
+
+Use the credentials and public IP address provided on the hands-on lab page to get into Server1 (The host instance). Since we need root privileges, let's just run sudo -i right off and become root.
+
+Our inventory file should look something like this:
+
+[dbservers]
+dbserver1
+[webservers]
+webserver1
+[admins]
+adminserver1
+Set up SSH Keys
+
+First you need to generate a key with:
+
+ssh-keygen
+Then you can copy it over to webserver1 with the command:
+
+ssh-copy-id ansible@webserver1
+Repeat this with the other two servers, using the cloud_user password for the ansible user.
+
+Set up sudoers
+
+Log into webserver1 as cloud_user:
+
+cloud_user@webserver1
+Now run sudo visudo and add the following line to the end of the file:
+
+ansible ALL=(ALL) NOPASSWD: ALL
+Run exit to get out of this server, and then repeat the process for dbserver1 and adminserver1.
+
+Once that's done, test with:
+
+ssh ansible@webserver1
+Once you're in, try a sudo command:
+
+sudo tail /var/log/messages
+Then get out with exit again, and get ready for the next task.
+
+Write a Playbook to Install httpd, but Only on Web Servers
+
+Your playbook, httpd.yml, should look something like this:
+
+---
+- name: Install httpd on webservers
+  hosts: webservers
+  # This encompasses everything in the webservers group.
+  # We can also just have a single host name here, like webserver1.
+  become: yes
+  
+  tasks:
+   - yum:
+      name: httpd
+      state: present
+    
+   - service:
+      name: httpd
+      state: started
+      enabled: yes
+Use an Ad hoc Command to Install tcpdump on AdminServer1
+
+The simplest ad-hoc command here would be:
+
+ansible -m yum -a "name=tcpdump state=present" adminserver1 --become
+Use the LVM Module in a Playbook to Set up the Disk Attached to DBServer1
+
+Your playbook, disk.yml, should look similar to the following:
+
+---
+- name: lvol
+  hosts: dbservers
+  # This encompasses everything in the dbservers group.
+  # We can also just have a single host name here, like dbserver1.
+  become: yes
+
+  tasks:
+  - name: LVG create
+    lvg:
+     vg: RHCE
+     pvs: /dev/xvdg
+
+  - name: Logical Volume Setup
+    lvol:
+     lv: AppDB2
+     vg: RHCE
+     size: 10G
+     pvs: /dev/xvdg
+     state: present
+
+  - name: Format the disk
+    filesystem:
+     dev: /dev/RHCE/AppDB2
+     fstype: xfs
+
+  - name: Mount the disk
+    mount:
+     fstype: xfs
+     src: /dev/RHCE/AppDB2
+     state: mounted
+     path: /mnt/dbdata
+Now run it with ansible-playbook disk.yml
+
+Create the Users adam, john, sara, and sam on All Servers
+
+There are a lot of ways to tackle this problem. One method is to use with_items. Create and edit users.yml:
+
+---
+- name: Create Users
+  hosts: all
+  become: yes
+  
+  tasks:
+   - name: Create users
+     user:
+      name: "{{ item }}"
+     with_items:
+      - adam
+      - john
+      - sara
+      - sam
+Now run it with ansible-playbook users.yml
+
+Write a Bash Script That Will Collect the Required Ansible Information
+
+We want to get each host's Ansible facts and dump the information into respective text files. So you've got to write a script, facts.sh, that will query each one and put its relevant info into a text file. The script should look something like the following:
+
+#!/bin/bash
+for i in webserver1 dbserver1 adminserver1
+do
+        ansible -m setup $i > /tmp/$i\_facts
+done
+Make the script executable (chmod +x facts.sh) and run it with ./facts.sh. Now, to check, run ls /tmp, which should show a file that corresponds to each of those three hosts.
+
+Create an SSH Configuration File and Distribute It
+
+Edit the ssh.tmpl file sitting in /root and alter the two relevant lines (starting with PasswordAuthentication and X11Forwarding). There are a few lines separating them. They should look similar to this:
+
+PasswordAuthentication {{ PAanswer }}
+X11Forwarding {{ X11Answer }}
+And the playbook, ssh.yml, to apply the template should look like this:
+
+---
+- name: Review Task 9
+  hosts: all:!admins
+  become: yes
+  vars:
+   PAanswer: "no"
+   X11Answer: "no"
+
+  tasks:
+   - name: Apply Template
+     template:
+      src: /root/ssh.tmpl
+      dest: /etc/ssh/sshd_config
+      validate: /sbin/sshd -t -f %s
+
+   - name: Restart SSHD
+     service:
+      name: sshd
+      state: restarted
+
+- name: Review Task 9b
+  hosts: admins
+  become: yes
+  vars:
+   PAanswer: "no"
+   X11Answer: "yes"
+
+  tasks:
+   - name: Apply template
+     template:
+      src: /root/ssh.tmpl
+      dest: /etc/ssh/sshd_config
+      validate: /sbin/sshd -t -f %s
+
+   - name: Restart SSHD
+     service:
+      name: sshd
+      state: restarted
+Now run it with ansible-playbook ssh.yml.
+
+Create the Two Roles
+
+The commands to create custom roles are:
+
+ansible-galaxy init web
+ansible-galaxy init database
+Configure the database Role and Encrypt the Password File
+
+First, get into the files subdirectory of the database directory:
+
+cd database/files
+Create a password file that contains the following:
+
+This is a password
+Encrypt it with this:
+
+ansible-vault encrypt password
+Enter a password that you won't forget. To check your work, run cat password and make sure that the file is in fact encrypted.
+
+Now get into the tasks directory:
+
+cd ../tasks
+Edit main.yml. It should look like this when you're done:
+
+---
+# tasks file for database
+- name: Ensure user is created
+  user:
+   name: dba
+
+- name: Copy password file
+  copy:
+   src: password
+   dest: /home/dba
+Now go back to your home directory (with cd) and create db.yml. It should look like this when you're done:
+
+---
+- hosts: dbservers
+  roles:
+    - database
+Now run it with ansible-playbook db.yml --become --ask-vault-pass. Enter the password you set in the ansible-vault encrypt password command you ran earlier, and this should work.
+
+Configure the web Role and Ensure It Deploys Correctly
+
+From the web directory, open the main.yml file in the tasks directory. It should look like this when we're finished:
+
+---
+# tasks file for web
+#
+- name: Populate index.html
+  lineinfile:
+   path: /var/www/html/index.html
+   create: yes
+   line: "{{ inventory_hostname }} {{ansible_facts['all_ipv4_addresses'] }}"
+
+- name: Install httpd
+  yum:
+   name: httpd
+   state: present
+
+- name: Start httpd
+  service:
+   name: httpd
+   state: started
+   enabled: yes
+Now go back to your home directory (with cd) and write a quick role deployment routine (web.yml). It should look like this:
+
+---
+- hosts: webservers
+  roles:
+   - web
+Run the playbook with ansible-playbook web.yml --become. To test if it all went well, run curl webserver1. We should get back the name of the server and relevant IP addresses (what we asked for in the ansible_facts['all_ipv4_addresses part of the web/tasks.yml playbook.
