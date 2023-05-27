@@ -3,9 +3,9 @@
 
 1. Chai
 2. Coffee
-3. Jalebi
-4. Musali
-5. Chea seeds
-6. Peanut butter
-7. Brown Bread
+3. Musali
+4. Chea seeds
+5. Peanut butter
+6. Brown Bread
+7. Fruits and green vegies
 ```
