@@ -11,3 +11,4 @@
 8. Automation for ec2 management using Python and Boto3 - create, terminate, stop instances
 9. Setup wavefront for Kubernetes cluster
 10. Backup and recover Kubernetes cluster using Velero
+11. Jenkins - Cleanup EC2 instances created by AWS BOTO3 Python script - manually, github Webhook, at particular time interval (10 PM)
