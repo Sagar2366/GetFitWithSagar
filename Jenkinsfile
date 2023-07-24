@@ -17,7 +17,8 @@ pipeline {
         
         stage('Execute java application') { 
             steps {
-                sh 'java Jenkins/HelloWorld'
+                sh 'cd Jenkins'
+                sh 'java HelloWorld'
             }
         }
     }
