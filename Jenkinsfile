@@ -1,4 +1,4 @@
-pipeline {
+npipeline {
     agent any 
     stages {
         stage('Verify java is installed or not') { 
@@ -17,7 +17,7 @@ pipeline {
         
         stage('Execute java application') { 
             steps {
-                sh 'java HelloWorld'
+                sh 'java Jenkins/HelloWorld'
             }
         }
     }
