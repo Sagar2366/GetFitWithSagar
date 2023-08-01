@@ -17,10 +17,16 @@
 14. SSO + SONARQUBE integration
 15. sonarqube configuration + change default port of sonarqube
 16. Setup sonarqube server using
-        a. binary
+        a. Binary
         b. Docker
         c. Kubernetes
 17. Sonarqube setup as server - https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/
+18. Setup monitoring for sonarqube - https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/deploy-on-kubernetes/deploy-sonarqube-on-kubernetes/
+19. Setup monitoring for Jenkins pipelines, freestyle jobs, nodes
+20. Sonarqube alternatives - 
+        a. Snyk : 
+        b. DeepSource : https://deepsource.com/sonarqube-alternatives
+        c. Vercode
 
 Upcoming
 1. EC2 instance and Cluster migration
