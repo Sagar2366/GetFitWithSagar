@@ -16,7 +16,11 @@
 13. Installation script for Sonarqube - Docker container, local setup
 14. SSO + SONARQUBE integration
 15. sonarqube configuration + change default port of sonarqube
-16. 
+16. Setup sonarqube server using
+        a. binary
+        b. Docker
+        c. Kubernetes
+17. Sonarqube setup as server - https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server/
 
 Upcoming
 1. EC2 instance and Cluster migration
