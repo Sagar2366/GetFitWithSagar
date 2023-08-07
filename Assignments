@@ -28,7 +28,19 @@
         b. DeepSource : https://deepsource.com/sonarqube-alternatives
         c. Vercode
 21. Backup and recover jenkins 
-
+Terraform
+22. Document Alternatives of the Terraform and their differences
+23. CI/CD pipeline for Terraform automation - [Soon to be updated]
+24. Manage Kubernetes cluster using Terraform
+    a. EKS
+    b. Kubeadm
+    c. AKS
+25. Comparison between Terraform community version and Terraform Cloud
+26. Shell script to setup Terraform on any machine - Ubuntu, Windows, Mac
+27. Manage Kubernetes secrets using Hashicorp Vault - https://developer.hashicorp.com/vault/docs/platform/k8s
+28. Document on Hashicorp tools
+29. Dockerise your application using Terraform
+30. Jenkins CI/CD pipeline for your application - Build, test, and deploy (Docker image creation and container creation)
 
 Upcoming
 1. EC2 instance and Cluster migration
