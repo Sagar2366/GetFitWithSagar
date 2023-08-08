@@ -41,6 +41,15 @@ Terraform
 28. Document on Hashicorp tools
 29. Dockerise your application using Terraform
 30. Jenkins CI/CD pipeline for your application - Build, test, and deploy (Docker image creation and container creation)
+31. Create EC2 instance into private subnet using Terraform
+32. Create vpc, subnet, network interfaces to be used and create EC2 instances
+33. Create public IP address and EC2 instance with public address created using terraform and print ec2 instance ID and public IP
+34. Create 2 LoadBalancer using terraform and output the results
+35. Update one of the above LoadBalancer resource using Terraform 
+36. Delete/Destroy only the second loadbalancer using terraform
+37. Store terraform state in multiple backends - remote, local and s3
+38. Document type of Loadbalancer and their differences
+39. Use input variables to enter S3 bucket name and create S3 bucket, store file into s3 bucket using Terraform
 
 Upcoming
 1. EC2 instance and Cluster migration
