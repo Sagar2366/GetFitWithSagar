@@ -3,7 +3,8 @@
     1. Using minikube
     2. Kubeadm
     3. KOPS
-    4. EKS
+    4. EKSctl
+    5. AWS Portal
 4. Setup cluster monitoring using Datadog
 5. Setup instance EC2 Ubuntu monitoring using Datadog
 6. Shell script to install and setup Python, Git and Docker
@@ -28,7 +29,8 @@
         b. DeepSource : https://deepsource.com/sonarqube-alternatives
         c. Vercode
 21. Backup and recover jenkins 
-Terraform
+
+Terraform Assignments
 22. Document Alternatives of the Terraform and their differences
 23. CI/CD pipeline for Terraform automation - [Soon to be updated]
 24. Manage Kubernetes cluster using Terraform
@@ -50,6 +52,33 @@ Terraform
 37. Store terraform state in multiple backends - remote, local and s3
 38. Document type of Loadbalancer and their differences
 39. Use input variables to enter S3 bucket name and create S3 bucket, store file into s3 bucket using Terraform
+40. Create, backup and recover EKS cluster using terraform and Velero
+41. Jenkins CI/CD pipeline to deploy -
+    a. EC2
+    b. S3
+    c. EKS
+    d. VPC and subnets
+42. Jenkins CI/CD pipeline to upgrade EKS cluster
+43. Terraform to manage Hashicorp vault
+44. EBS CSI Add on :
+    a. Create EKS cluster without installing EBS CSI addon -> Deploy any application in K8S cluster which requires pv and pvc 
+    Note : You will get an error to bound and create PV, PVC
+    b. To fix above error, add EBS CSI plugin to create PV in AWS and try setting up application again in K8S cluster.
+45. Create your own Terraform module for EC2 instance and EKS and publish it to Terraform registry
+46. Terraform plan to manager AWS Users, Groups and IAM policies
+47. Terraform plan to create AKS and GKE cluster
+
+
 
 Upcoming
 1. EC2 instance and Cluster migration
+
+
+References -
+https://github.com/terraform-aws-modules/terraform-aws-eks/blob/v19.16.0/examples/complete/main.tf
+https://github.com/hashicorp/learn-terraform-provision-eks-cluster/blob/main/main.tf
+https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-sidecar
+https://developer.hashicorp.com/vault/tutorials/kubernetes/vault-secrets-operator
+https://docs.aws.amazon.com/eks/latest/userguide/ebs-sample-app.html
+
+
