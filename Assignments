@@ -29,8 +29,9 @@
         b. DeepSource : https://deepsource.com/sonarqube-alternatives
         c. Vercode
 21. Backup and recover jenkins 
+22. Minikube commands and usage
 
-Terraform Assignments
+## Terraform Assignments
 22. Document Alternatives of the Terraform and their differences
 23. CI/CD pipeline for Terraform automation - [Soon to be updated]
 24. Manage Kubernetes cluster using Terraform
@@ -79,7 +80,8 @@ Terraform Assignments
 7. Blog on how to configure HA setup for Grafana
 8. Blog on How to secure/enable HTTPS for Grafana
 9. Blog on Prometheus + (Architecture) - What, why, how ?
-10. 
+10. Prometheus Grafana setup for EKS, Kubeadm setup
+11. 
 
 
 Upcoming
@@ -92,5 +94,7 @@ https://github.com/hashicorp/learn-terraform-provision-eks-cluster/blob/main/mai
 https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-sidecar
 https://developer.hashicorp.com/vault/tutorials/kubernetes/vault-secrets-operator
 https://docs.aws.amazon.com/eks/latest/userguide/ebs-sample-app.html
+https://github.com/Sagar2366/GetFitWithSagar/blob/main/monitoring_setup.md
+
 
 
