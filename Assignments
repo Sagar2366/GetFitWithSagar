@@ -30,6 +30,7 @@
         c. Vercode
 21. Backup and recover jenkins 
 22. Minikube commands and usage
+23. Enable autoscaling for Jenkins, Prometheus, Grafana Kubernetes setup (HPA, ClusterAutoscalar)
 
 ## Terraform Assignments
 22. Document Alternatives of the Terraform and their differences
@@ -103,7 +104,7 @@
 
 Upcoming
 1. EC2 instance and Cluster migration
-
+2. DSA for DevOps and SRE
 
 References -
 https://github.com/terraform-aws-modules/terraform-aws-eks/blob/v19.16.0/examples/complete/main.tf
