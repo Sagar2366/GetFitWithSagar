@@ -43,7 +43,7 @@ We’ll start by adding the repository to our helm configuration:
 Once the repo is ready, we can install the provided charts by running the following commands:
 
 ```
-helm install prometheus prometheus-community/prometheus
+helm install prometheus prometheus-community/prometheus OR helm install prometheus -f values.yaml prometheus-community/prometheus
 kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-np
 ```
 
