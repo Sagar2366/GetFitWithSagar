@@ -31,6 +31,7 @@
 21. Backup and recover jenkins 
 22. Minikube commands and usage
 23. Enable autoscaling for Jenkins, Prometheus, Grafana Kubernetes setup (HPA, ClusterAutoscalar)
+24. Python script for MongoDB (CRUD - Create, Read, Update, Delete)
 
 ## Terraform Assignments
 22. Document Alternatives of the Terraform and their differences
@@ -101,6 +102,7 @@
     d. Notification to Telegram
 
 14. Monitor health of Prometheus, Grafana, EC2, Jenkins using REST API (Python)
+15. REST API for Docker management - Image, container - Cost saving, Space saving
 
 Upcoming
 1. EC2 instance and Cluster migration
