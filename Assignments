@@ -81,8 +81,23 @@
 8. Blog on How to secure/enable HTTPS for Grafana
 9. Blog on Prometheus + (Architecture) - What, why, how ?
 10. Prometheus Grafana setup for EKS, Kubeadm setup
-11. 
+11. Setup Prometheus alerts for EC2 - notRunning, health check failing, cpu is high, memory is high, disk space usage high
+    a. Notification to Slack
+    b. Notification to Gmail
+    c. Notification to PagerDuty
+    d. Notification to Telegram
 
+12. Setup Prometheus alerts for Jenkins server - notRunning, health check failing, cpu is high, memory is high
+    a. Notification to Slack
+    b. Notification to Gmail
+    c. Notification to PagerDuty
+    d. Notification to Telegram
+
+13. Setup Prometheus alerts for Kubernetes (EKS, Kubeadm, minikube) - notRunning, health check failing, cpu is high, memory is high
+    a. Notification to Slack
+    b. Notification to Gmail
+    c. Notification to PagerDuty
+    d. Notification to Telegram
 
 Upcoming
 1. EC2 instance and Cluster migration
@@ -95,6 +110,10 @@ https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-sidecar
 https://developer.hashicorp.com/vault/tutorials/kubernetes/vault-secrets-operator
 https://docs.aws.amazon.com/eks/latest/userguide/ebs-sample-app.html
 https://github.com/Sagar2366/GetFitWithSagar/blob/main/monitoring_setup.md
-
-
+https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
+https://github.com/prometheus-community/helm-charts/blob/main/charts/prometheus/values.yaml
+https://samber.github.io/awesome-prometheus-alerts/rules.html#kubernetes
+https://www.pagerduty.com/docs/guides/prometheus-integration-guide/
+https://prometheus.io/docs/alerting/latest/configuration/#email_config
+https://prometheus.io/docs/alerting/latest/configuration/#telegram_config
 
