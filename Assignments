@@ -99,6 +99,8 @@
     c. Notification to PagerDuty
     d. Notification to Telegram
 
+14. Monitor health of Prometheus, Grafana, EC2, Jenkins using REST API (Python)
+
 Upcoming
 1. EC2 instance and Cluster migration
 
