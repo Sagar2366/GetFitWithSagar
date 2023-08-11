@@ -70,6 +70,9 @@
 45. Create your own Terraform module for EC2 instance and EKS and publish it to Terraform registry
 46. Terraform plan to manager AWS Users, Groups and IAM policies
 47. Terraform plan to create AKS and GKE cluster
+48. EC2 instance migration to different region
+49. Kubernetes Cluster migration
+50. 
 
 ## Observability 
 1. Blog on Grafana and it's other prodcuts
@@ -102,11 +105,15 @@
     d. Notification to Telegram
 
 14. Monitor health of Prometheus, Grafana, EC2, Jenkins using REST API (Python)
-15. REST API for Docker management - Image, container - Cost saving, Space saving
+15. REST API for Docker management using Python - Image, container - Cost saving, Space saving
 
-Upcoming
-1. EC2 instance and Cluster migration
-2. DSA for DevOps and SRE
+
+## Additional topics
+Networking
+ELK
+Ingress
+DSA for DevOps and SRE
+Ansible
 
 References -
 https://github.com/terraform-aws-modules/terraform-aws-eks/blob/v19.16.0/examples/complete/main.tf
@@ -121,4 +128,4 @@ https://samber.github.io/awesome-prometheus-alerts/rules.html#kubernetes
 https://www.pagerduty.com/docs/guides/prometheus-integration-guide/
 https://prometheus.io/docs/alerting/latest/configuration/#email_config
 https://prometheus.io/docs/alerting/latest/configuration/#telegram_config
-
+https://docs.docker.com/engine/api/sdk/examples/
